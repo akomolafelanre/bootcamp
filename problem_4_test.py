@@ -22,7 +22,22 @@ class TestFunWithFibonacci(unittest.TestCase):
 		self.assertEqual(result, [0,1,1],  \
 			msg = "This should generate the list [0,1,1] ")
 
+	def testGSeries_CheckCorrectResult2(self):
+		result = problem_4.generateSeries(5)
+		self.assertEqual(result, [0,1,1,2,3],  \
+			msg = "This should generate the list [0,1,1] ")
+
 	def testSum_IsList(self):
+		result = problem_4.calculateSum(1)
+		self.assertEqual(result, 'Not a list',  \
+			msg = "This should return the sum of the list")
+
+	def testSum_IsList2(self):
+		result = problem_4.calculateSum('aded')
+		self.assertEqual(result, 'Not a list',  \
+			msg = "This should return the sum of the list")
+
+	def testSum_IsList3(self):
 		result = problem_4.calculateSum([0,1,2])
 		self.assertEqual(result, 3,  \
 			msg = "This should return the sum of the list")
