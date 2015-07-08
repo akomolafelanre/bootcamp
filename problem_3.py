@@ -24,19 +24,14 @@ def check_numbers(word):
 
 def check_passwords(s):
 	result = 0
-	lowercase = 0
-	uppercase = 0
-	numbers = 0
-
 	passwords = open(s, 'r')
 	for item in passwords:
-		lowercase = check_lowercase(item)
-		uppercase = check_uppercase(item)
-		numbers = check_numbers(item)
-		if (numbers >= 4) and (lowercase >= 2) and (uppercase >= 4):
-			result += 1
-
+		if check_numbers(item) >= 4:
+			if check_lowercase(item) >= 2:
+				if check_uppercase(item) >= 4:
+					result += 1
 	print "%s has %d valid passwords." %(s, result)
 
-if __name__ == "__main__":
-	check_passwords("password.txt")
+#if __name__ == "__main__":
+
+check_passwords("password.txt")
