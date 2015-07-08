@@ -1,8 +1,9 @@
 def generateSeries(n):
 	if (type(n) != int):
-		return -1
-	if (n < 1):
-		return -1
+		return 'Not an Integer'
+	if (n < 2):
+		return 'The number provided must be an integer geater than 1'
+
 
 
 def calculateSum(n):
