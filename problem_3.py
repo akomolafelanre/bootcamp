@@ -32,6 +32,5 @@ def check_passwords(s):
 					result += 1
 	print "%s has %d valid passwords." %(s, result)
 
-#if __name__ == "__main__":
-
-check_passwords("password.txt")
+if __name__ == "__main__":
+	check_passwords("password.txt")
