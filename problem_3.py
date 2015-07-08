@@ -38,4 +38,5 @@ def check_passwords(s):
 
 	print "%s has %d valid passwords." %(s, result)
 
-check_passwords("password.txt")
+if __name__ == "__main__":
+	check_passwords("password.txt")
