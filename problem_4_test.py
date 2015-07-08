@@ -34,5 +34,9 @@ class TestFunWithFibonacci(unittest.TestCase):
 		self.assertEqual(problem_4.calculateSum([3, 4]), 7,  \
 			msg = "This should return the sum of [3,4] as 7 ")
 
+	def testSum_IsResultCorrect(self):
+		self.assertEqual(problem_4.calculateSum([3, 4]), 7,  \
+			msg = "This should return the sum of [3,4] as 7 ")
+
 if __name__ == "__main__":
 	unittest.main()
