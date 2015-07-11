@@ -9,7 +9,7 @@ class BinarySearch(list):
       current_length += 1
     super(BinarySearch, self).__init__(data)
     self.length = len(data)
-
+  
   def search(self,val):
     count = 0
     index = None
@@ -57,6 +57,7 @@ class BinarySearch(list):
           mid_point += (end_point - mid_point)//2
     result['count'] = count
     return result
+
 
 if __name__ == "__main__":
   a = BinarySearch(100,10)

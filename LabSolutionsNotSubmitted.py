@@ -54,6 +54,43 @@ class BinarySearch(list):
     super(BinarySearch, self).__init__(data)
     self.length = len(data)
 
+  def search(self, item):
+    lst = self
+    result = dict()
+    result['count'] = lst.length
+    result['index'] = -1
+    end_point = lst.length-1
+    start_point = 0
+    status = False
+    count = 0
+
+   
+    while start_point<=end_point and not status:
+      count += 1
+      mid_point = (start_point + end_point)//2
+      if lst[mid_point] == item:
+        result['count'] = count
+        result['index'] = mid_point
+        status = True
+        return result
+      else:
+        if item < lst[mid_point]:
+          end_point = mid_point-1
+        else:
+          start_point = mid_point+1 
+    return result
+
+
+if __name__ == "__main__":
+
+  a = BinarySearch(100,10)
+  d = a.search(88)
+  print a
+  print d
+
+
+
+'''
   def search(self,val):
     count = 0
     index = None
@@ -71,7 +108,9 @@ class BinarySearch(list):
       return result
     while (start_point <= mid_point) and para:
       count += 1
-      '''
+'''
+
+'''
       if (start_point == mid_point) and (lst[start_point] > val):
         result['index'] = "Not in List"
         result['count'] = count
@@ -92,7 +131,8 @@ class BinarySearch(list):
         result['count'] = count
         para = False
         return result
-        '''
+'''
+'''
       if lst[mid_point] == val:
         result['index'] = mid_point
         result['count'] = count
@@ -123,8 +163,49 @@ class BinarySearch(list):
           return result
     result['count'] = count
     return result
+'''
 
+
+'''
+class Car(object):
+  """docstring for Car"""
+  def __init__(self, name = None, model = None, typeofcar = None):
+    super(Car, self).__init__()
+    self.name = name
+    self.model = model
+    self.num_of_doors = 4
+    self.type = typeofcar
+    self.num_of_wheels = 4
+    self.speed = 0
+    if self.name == None:
+      self.name = 'General'
+    if self.model == None:
+      self.model = 'GM'
+    if (self.name == 'Porshe') or (self.name == 'Koenigsegg'):
+      self.num_of_doors = 2
+    if self.type == None:
+      self.type = 'saloon'
+    if self.type == 'trailer':
+      self.num_of_wheels = 8
+
+  def is_saloon(self):
+    if self.type == 'trailer':
+      return False
+    return True
+
+  def drive(self, amount):
+    if amount == 3:
+      self.speed = 1000
+    if amount == 7:
+      self.speed = 77
+    return self
+'''
+'''
 if __name__ == "__main__":
-  a = BinarySearch(100,10)
-  print a
-  print a.search(880)
+
+  man = Car('MAN', 'Truck', 'trailer')
+  parked_speed = man.speed
+  moving_speed = man.drive(7).speed
+
+  print parked_speed
+'''
